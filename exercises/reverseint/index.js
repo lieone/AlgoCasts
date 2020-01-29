@@ -10,7 +10,6 @@
 
 function reverseInt(n) {
     let sign = Math.sign(n);
-    let abs = Math.abs(n);
     return sign * parseInt(n.toString().split('').reverse().join(''));
 }
 
