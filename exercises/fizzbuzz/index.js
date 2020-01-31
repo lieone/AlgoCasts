@@ -12,6 +12,17 @@
 //   4
 //   buzz
 
-function fizzBuzz(n) {}
+const config = [
+    { test: (n) => n % 3 === 0, result: () => 'fizz' },
+    { test: (n) => n % 5 === 0, result: () => 'buzz' }
+];
+
+function fizzBuzz(n) {
+    for (let i = 1; i <= n; i++) {
+        console.log(
+            config.filter(cfg => cfg.test(i)).map(cfg => cfg.result()).join('') || i
+        );
+    }
+}
 
 module.exports = fizzBuzz;
