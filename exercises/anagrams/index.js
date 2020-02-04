@@ -23,7 +23,7 @@ function anagrams(stringA, stringB) {
             ...acc,
             [char]: acc[char] + 1 || 1
         }), {});
-        return Object.keys(charsA).filter(char => charsA[char] !== charsB[char]).length === 0;
+        return !Object.keys(charsA).some(char => charsA[char] !== charsB[char]);
     }
     return false;
 }
