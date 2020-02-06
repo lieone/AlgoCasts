@@ -19,10 +19,10 @@
 
 function steps(n) {
     const spaces = ''.padStart(n, ' ');
-    const pads = ''.padStart(n, '#');
+    const pounds = ''.padStart(n, '#');
     let i = 0;
     while(i++ < n) {
-        console.log([pads.slice(0, i), spaces.slice(i)].join(''));
+        console.log([pounds.slice(0, i), spaces.slice(i)].join(''));
     }
 }
 
