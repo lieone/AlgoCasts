@@ -8,6 +8,30 @@
 // Example:
 //   fib(4) === 3
 
-function fib(n) {}
+function fibHelper(a, b, counter) {
+  if (counter === 0) {
+    return a;
+  }
+  return fibHelper(b, a + b, counter - 1);
+}
+
+function fib(n) {
+  if (n < 2) {
+    return n;
+  }
+  return fibHelper(0, 1, n);
+}
+
+// function fib(n) {
+//   let pair = [0, 1];
+//   if (n < 2) {
+//     return pair[n];
+//   }
+//   for (let i = 2; i <= n; i++) {
+//     pair[1] = pair[0] + pair[1];
+//     pair[0] = pair[1] - pair[0];
+//   }
+//   return pair[1];
+// }
 
 module.exports = fib;
