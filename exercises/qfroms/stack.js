@@ -14,6 +14,10 @@ class Stack {
   peek() {
     return this.data[this.data.length - 1];
   }
+
+  toString() {
+    return this.data.toString();
+  }
 }
 
 module.exports = Stack;

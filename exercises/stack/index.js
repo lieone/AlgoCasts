@@ -10,6 +10,23 @@
 //   s.pop(); // returns 2
 //   s.pop(); // returns 1
 
-class Stack {}
+class Stack {
+  push(val) {
+    this.cursor = {
+      prev: this.cursor,
+      val,
+    };
+  }
+
+  pop() {
+    const { prev, val } = this.cursor;
+    this.cursor = prev;
+    return val;
+  }
+
+  peek() {
+    return this.cursor?.val;
+  }
+}
 
 module.exports = Stack;

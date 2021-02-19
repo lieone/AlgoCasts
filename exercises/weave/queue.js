@@ -6,15 +6,21 @@
 
 class Queue {
   constructor() {
-    this.data = [];
+    this.cursor = {};
+    this.tail = this.cursor;
   }
-
-  add(record) {
-    this.data.unshift(record);
+  add(val) {
+    this.cursor.val = val;
+    this.cursor.prev = {};
+    this.cursor = this.cursor.prev;
   }
-
   remove() {
-    return this.data.pop();
+    const { val, prev } = this.tail;
+    this.tail = prev;
+    return val;
+  }
+  peek() {
+    return this.tail.val;
   }
 }
 
